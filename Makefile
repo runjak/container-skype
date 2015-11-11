@@ -13,5 +13,8 @@ testPulse:
 fixPulse:
 	pax11publish -e
 
+cleanPulse:
+	pax11publish -r
+
 skype:
 	ssh docker-skype skype-pulseaudio
