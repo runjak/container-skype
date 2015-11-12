@@ -2,10 +2,10 @@ update:
 	docker pull tomparys/skype
 
 sound:
-	docker run -d -p 55555:22 tomparys/skype
+	docker run -d -p 55555:22 -v `pwd`:/tmp tomparys/skype
 
 webcam:
-	sudo docker run --privileged -d -p 55555:22 -v /dev/video0:/dev/video0:rw tomparys/skype
+	sudo docker run --privileged -d -p 55555:22 -v `pwd`:/tmp -v /dev/video0:/dev/video0:rw tomparys/skype
 
 testPulse:
 	pax11publish
