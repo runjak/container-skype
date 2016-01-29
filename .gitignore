@@ -1,5 +1,9 @@
 .Skype
 .Xauthority
 .config
+.cache
 .fontconfig
 .pulse-cookie
+.bash_logout
+.bashrc
+.profile

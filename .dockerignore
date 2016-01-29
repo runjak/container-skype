@@ -1,0 +1,15 @@
+.config
+.cache
+.dockerignore
+.fontconfig
+.git
+.gitignore
+LICENSE
+Makefile
+.pulse-cookie
+README.md
+.Skype
+.Xauthority
+.bash_logout
+.bashrc
+.profile
