@@ -1,5 +1,3 @@
-# FIXME try sid!
-# Inspired by https://github.com/tomparys/docker-skype-pulseaudio
 FROM debian:stable
 
 MAINTAINER Jakob Runge <sicarius@g4t3.de>
@@ -28,32 +26,3 @@ RUN apt-get install -fy						# Automatically detect and install dependencies
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod a+x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-
-# # Create user "docker" and set the password to "docker"
-# RUN useradd -m -d /home/docker docker
-# RUN echo "docker:docker" | chpasswd
-
-# # Create OpenSSH privilege separation directory, enable X11Forwarding
-# RUN mkdir -p /var/run/sshd
-# RUN echo X11Forwarding yes >> /etc/ssh/ssh_config
-
-# # Prepare ssh config folder so we can upload SSH public key later
-# RUN mkdir /home/docker/.ssh
-# RUN chown -R docker:docker /home/docker
-# RUN chown -R docker:docker /home/docker/.ssh
-
-# # Set locale (fix locale warnings)
-# RUN localedef -v -c -i en_US -f UTF-8 en_US.UTF-8 || true
-# RUN echo "Europe/Prague" > /etc/timezone
-
-# # Set up the launch wrapper - sets up PulseAudio to work correctly
-# RUN echo 'export PULSE_SERVER="tcp:localhost:64713"' >> /usr/local/bin/skype-pulseaudio
-# RUN echo 'PULSE_LATENCY_MSEC=60 skype' >> /usr/local/bin/skype-pulseaudio
-# RUN chmod 755 /usr/local/bin/skype-pulseaudio
-
-
-# # Expose the SSH port
-# EXPOSE 22
-
-# # Start SSH
-# ENTRYPOINT ["/usr/sbin/sshd",  "-D"]
