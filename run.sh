@@ -31,4 +31,4 @@ docker run -it \
   --memory 512mb \
   --cap-add=SYS_ADMIN \
   --rm \
-  runjak/docker-skype:latest
+  runjak/skype:latest
