@@ -1,4 +1,4 @@
-docker-skype
+container-skype
 ===
 
 Run Skype inside a docker container.
